@@ -30,6 +30,7 @@ vec3 illuminate(vec3 lightPosition) {
     vec3 r = (2.0 * dot(normalize(vNormal), normalize(wi)) * normalize(vNormal)) - normalize(wi);
     vec3 specular = ks * pow(max(dot(r, wo), 0.0), shininess);
     // vec3 specular = vec3(0.0);
+    // Test
 
     return intensity * (diffuse + specular);
 }
