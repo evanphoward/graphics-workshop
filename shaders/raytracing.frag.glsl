@@ -86,8 +86,8 @@ Hit intersect(Ray r) {
 vec3 illuminate(vec3 lightPosition, vec3 pos, vec3 wo, Hit h) {
     vec3 wi = lightPosition - pos;
     vec3 kd = h.material.kd;
-    Hit shad = intersect(Ray(pos, lightPosition));
-    if (shad.time != inf) {
+    Hit shad = intersect(Ray(pos, wi));
+    if (shad.time < 1.0) {
         return vec3(0.0);
     }
     if (h.material.checker) {
