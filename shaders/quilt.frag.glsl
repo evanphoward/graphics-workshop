@@ -18,9 +18,11 @@ void main() {
     // 2. Uncomment these lines to invert some of the triangles
     vec2 cell = squareCoord - loc;
     if (mod(2.0 * cell.x + cell.y, floor(seed * 20.0)) == 1.0) {
+        // Cirlce shape
         color = vec3(smoothstep(-0.05, 0.05, sqrt(pow(loc.x - 0.5, 2.0) + pow(loc.y - 0.5, 2.0)) - 0.5));
     }
     else {
+        // Triangle shape
         color = vec3(smoothstep(-0.05, 0.05, loc.x - loc.y));
     }
 
